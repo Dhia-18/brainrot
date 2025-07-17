@@ -1,6 +1,19 @@
 let previousDomain = null;
 let startTime = Date.now();
-const socialSites = ["www.facebook.com", "www.x.com", "www.instagram.com", "www.linkedin.com", "www.discord.com", "www.youtube.com"]
+
+// Most used social media platforms
+const platforms = [
+    "www.facebook.com",
+    "www.x.com",
+    "www.instagram.com",
+    "www.linkedin.com",
+    "www.discord.com",
+    "www.youtube.com",
+    "www.snapchat.com",
+    "www.twitch.com",
+    "www.whatsapp.com",
+    "www.telegram.com",
+    ]
 
 function getDomain(url){
     try{
@@ -18,22 +31,22 @@ function handleTabChange(tabId){
         const domain = getDomain(tab.url);
         const now = Date.now();
         
-        // Save time spent on previous domain
+        // Save time screen on previous domain
         if(previousDomain){
             const timeSpent = now - startTime;
             updateStats(previousDomain, timeSpent);
         }
 
-        if(socialSites.includes(domain)){
+        if(platforms.includes(domain)){
             previousDomain = domain;
-            startTime = now;
         } else{
             previousDomain = null;
-            startTime = now;
         }
+        startTime = now;
     });
 }
 
+// Update local storage
 async function updateStats(domain, timeSpent){
     const domainData = await chrome.storage.local.get([domain]);
     const pickupsData = await chrome.storage.local.get(["pickups"]);
