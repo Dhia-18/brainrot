@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Brainrot",
+    "permissions": [
+        "tabs",
+        "storage",
+        "idle",
+        "alarms"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "assets/images/Brain_Good_Health.png"
+    }
+}

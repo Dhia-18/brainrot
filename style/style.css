@@ -1,0 +1,175 @@
+@font-face {
+    font-family: "Noto Sans";
+    src: url("../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf");
+    font-weight: 300 700;
+}
+
+:root{
+    --beige: hsl(51, 100%, 96%);
+    --dark-beige: hsl(50, 14%, 50%);
+    --dark-blue: hsl(237, 74%, 5%);
+    --light-green: hsl(135, 58%, 49%);
+    --health: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans";
+}
+
+ol{
+    list-style: none;
+}
+
+hr{
+    color: var(--dark-beige);
+    border: 1px solid;
+    width: 300px;
+    margin: 0 auto;
+}
+
+main{
+    width: 700px;
+    height: 400px;
+    background-color: var(--beige);
+    border: 3px solid black;
+    
+    display: flex;
+}
+
+/* Styling the brain section */
+
+.brain-section{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--dark-beige);
+}
+
+#brain{
+    width: 300px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.02);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.health{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#health-bar{
+    display: block;
+    width: 200px;
+    height: 6px;
+    border-radius: 30px;
+    background-color: black;
+    position: relative;
+}
+
+#health-bar::before{
+    content: "";
+    position: absolute;
+    background-color: var(--light-green);
+    top: 0;
+    left: 0;
+    width: var(--health);
+    height: 100%;
+    border-radius: 30px;
+}
+
+#health-amount{
+    font-size: 35px;
+    color: var(--dark-blue);
+}
+
+.health p{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark-beige);
+}
+
+/* Styling the screen time section */
+
+.screen-time-section{
+    width: 350px;
+    padding: 25px 20px;
+}
+
+.flex-box{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.flex-box p{
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark-beige);
+}
+
+.flex-box span{
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+figure{
+    padding: 20px 0;
+}
+
+figcaption{
+    font-weight: 700;
+}
+
+ol{
+    margin-top: 10px;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+li.website:not(:last-child){
+    border-bottom: 1px solid rgb(211, 211, 189);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.time-spent{
+    margin-left: auto;
+    color: var(--dark-beige);
+}
+
+.website-name{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.website-icon{
+    width: 30px;
+}
